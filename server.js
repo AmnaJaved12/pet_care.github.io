@@ -10,10 +10,10 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))
 require('dotenv').config();
-const uri = process.env.MONGODB_CONNECT_URI;
+const url = process.env.MONGODB_CONNECT_URL;
 
 // Connect to MongoDB Atlas
-mongoose.connect(uri)
+mongoose.connect(url)
     .then(() => {
         console.log('Connected to MongoDB Atlas');
 
